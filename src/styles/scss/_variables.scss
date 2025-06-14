@@ -1,0 +1,19 @@
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+$container-padding: 1rem;
+$max-width: 1200px;
+
+$text-sm: 16px;
+$text-md: 18px;
+$text-lg: 20px;
+$text-xl: 24px;
+
+$primary-color: #181b43;
+$secondary-color: #ffc400;
+$text-color: #adadad;
