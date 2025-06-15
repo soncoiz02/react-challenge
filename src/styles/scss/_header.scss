@@ -1,72 +1,77 @@
-@use 'variables' as vars;
-@use 'mixin' as mixins;
+@use "variables" as vars;
+@use "mixin" as mixins;
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255,255,255,0.8);
-    border-radius:0 0 20px 20px;
-    backdrop-filter: blur(20px);
-    box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
-    max-height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0 0 30px 30px;
+  backdrop-filter: blur(20px);
+  box-shadow: vars.$boxShadow;
+  max-height: 80px;
+  z-index: 99;
 
-    .container {
-        display: flex;
-        align-items: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        justify-content: space-between;
+  .container {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: space-between;
 
-        .logo {
-            font-size: vars.$text-xl;
-            color: vars.$primary-color;
-            span {
-                color: vars.$secondary-color;
-            }
-        }
-
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 0 10px;
-
-            .btn-nav {
-                font: {
-                    size: vars.$text-sm;
-                    weight: 600;
-                }
-                padding: 8px 14px;
-                color: rgb(54, 54, 54);
-                transition: 1s;
-                transform-origin: center;
-                cursor: pointer;
-
-                @include mixins.respond('md') {
-                    font-size: vars.$text-md;
-                    padding: 10px 20px;
-                }
-
-                &.active {
-                    color: vars.$secondary-color;
-                    border-bottom: 2px solid vars.$secondary-color;
-                }
-            }
-        }
-
-        .search-bar {
-            padding: 10px 18px;
-            width: 500px;
-            outline: none;
-            border: 1px solid #d4d4d4;
-            border-radius: 50px;
-            font-size: vars.$text-sm;
-
-            &::placeholder {
-                font-size: vars.$text-sm;
-            }
-        }
+    .logo {
+      font-size: vars.$text-xl;
+      color: vars.$primary-color;
+      span {
+        color: vars.$secondary-color;
+      }
     }
 
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 0 10px;
+
+      .btn-nav {
+        font: {
+          size: vars.$text-sm;
+          weight: 600;
+        }
+        padding: 8px 14px;
+        color: rgb(54, 54, 54);
+        transition: 1s;
+        transform-origin: center;
+        cursor: pointer;
+
+        @include mixins.respond("md") {
+          font-size: vars.$text-md;
+          padding: 10px 20px;
+        }
+
+        &.active {
+          color: vars.$secondary-color;
+          border-bottom: 2px solid vars.$secondary-color;
+        }
+
+        &:not(.active):hover {
+          background: rgba(0, 0, 0, 0.05);
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .search-bar {
+      padding: 10px 18px;
+      width: 500px;
+      outline: none;
+      border: 1px solid #d4d4d4;
+      border-radius: 50px;
+      font-size: vars.$text-sm;
+
+      &::placeholder {
+        font-size: vars.$text-sm;
+      }
+    }
+  }
 }

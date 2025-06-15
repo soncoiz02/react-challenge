@@ -1,9 +1,8 @@
 $breakpoints: (
-  'sm': 576px,
-  'md': 768px,
-  'lg': 992px,
-  'xl': 1200px,
-  'xxl': 1400px
+  "sm": 576px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1400px,
 );
 
 $container-padding: 1rem;
@@ -13,7 +12,10 @@ $text-sm: 16px;
 $text-md: 18px;
 $text-lg: 20px;
 $text-xl: 24px;
+$text-2xl: 30px;
 
-$primary-color: #181b43;
+$primary-color: #00044f;
 $secondary-color: #ffc400;
-$text-color: #adadad;
+$text-color: #7a7a7a;
+
+$boxShadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;

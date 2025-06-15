@@ -1,5 +1,5 @@
-@use 'variables' as vars;
-@use 'sass:map';
+@use "variables" as vars;
+@use "sass:map";
 
 @mixin respond($breakpoint) {
   @if map.has-key(vars.$breakpoints, $breakpoint) {
@@ -18,9 +18,45 @@
   padding-left: vars.$container-padding;
   padding-right: vars.$container-padding;
 
-  @include respond('sm') { max-width: 540px; }
-  @include respond('md') { max-width: 720px; }
-  @include respond('lg') { max-width: 960px; }
-  @include respond('xl') { max-width: 1140px; }
-  @include respond('xxl') { max-width: 1320px; }
+  @include respond("sm") {
+    max-width: 540px;
+  }
+  @include respond("md") {
+    max-width: 720px;
+  }
+  @include respond("lg") {
+    max-width: 1024px;
+  }
+  @include respond("xl") {
+    max-width: 1320px;
+  }
+}
+
+@mixin skeleton {
+  background-color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      left: -150%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
 }

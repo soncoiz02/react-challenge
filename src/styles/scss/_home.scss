@@ -1,0 +1,49 @@
+@use "variables" as vars;
+@use "mixin" as mixins;
+
+.home {
+  position: relative;
+  margin-top: 80px;
+  padding: 40px 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .search-input {
+      width: 80%;
+      padding: 10px 20px;
+      border-radius: 50px;
+      border: 1px solid #d4d4d4;
+    }
+
+    .segment-control {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      width: 20%;
+
+      .segment-item {
+        font-size: vars.$text-xl;
+        label {
+          cursor: pointer;
+        }
+        input {
+          display: none;
+
+          &:checked + label {
+            color: vars.$secondary-color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@use "mixin" as *;
+
+.movie-item-skeleton {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .movie-poster-skeleton {
+    width: 100%;
+    height: 340px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    background: #f0f0f0;
+    @include skeleton;
+  }
+
+  .movie-title-skeleton {
+    width: 80%;
+    height: 24px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background: #f0f0f0;
+    @include skeleton;
+  }
+
+  .movie-desc-skeleton {
+    width: 100%;
+    height: 16px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background: #f0f0f0;
+    @include skeleton;
+  }
+}

@@ -6,7 +6,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
@@ -16,13 +17,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
+  outline: none;
 }
 
 a {
@@ -30,7 +39,8 @@ a {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -39,4 +49,3 @@ button {
   border: none;
   background: none;
 }
-

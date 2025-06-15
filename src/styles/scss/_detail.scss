@@ -1,0 +1,207 @@
+@use "variables" as vars;
+@use "mixin" as mixins;
+
+.movie-detail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    .backdrop {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, white 30%, transparent);
+      }
+      .wrapper-image {
+        height: 100%;
+      }
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    .content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      gap: 40px;
+      padding-bottom: 40px;
+
+      .poster {
+        width: 300px;
+        height: 450px;
+        border-radius: 10px;
+        object-fit: cover;
+        overflow: hidden;
+        display: none;
+
+        .wrapper-image {
+          width: 100%;
+          height: 100%;
+        }
+
+        @include mixins.respond("md") {
+          display: block;
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .title {
+          font-size: vars.$text-2xl;
+          font-weight: 700;
+          color: vars.$primary-color;
+        }
+
+        .btn-watch {
+          padding: 12px 30px;
+          border-radius: 8px;
+          background: vars.$secondary-color;
+          color: #fff;
+          cursor: pointer;
+          margin-top: 20px;
+          display: flex;
+          gap: 6px;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-size: vars.$text-xl;
+    color: vars.$primary-color;
+  }
+
+  .movie-info {
+    position: relative;
+    width: 100%;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .infomation {
+      display: flex;
+      flex-direction: column;
+
+      .other-info {
+        margin-top: 6px;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .trailer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .movie-trailer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        iframe {
+          width: 100%;
+          aspect-ratio: 16 / 9;
+        }
+      }
+    }
+  }
+
+  .list-similar {
+    position: relative;
+    margin-top: 80px;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .list {
+        display: flex;
+        gap: 20px;
+        overflow: auto;
+
+        .item {
+          width: calc((100% * 6 / 12) - ((12 - 6) * 24px / 12));
+          max-width: calc((100% * 6 / 12) - ((12 - 6) * 24px / 12));
+          flex-shrink: 0;
+          cursor: pointer;
+
+          .movie-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+          }
+
+          .wrapper-image {
+            height: 320px;
+            border-radius: 10px;
+          }
+
+          .movie-title {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: vars.$text-md;
+          }
+
+          .movie-vote {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: vars.$text-sm;
+            color: vars.$secondary-color;
+
+            svg {
+              font-size: vars.$text-md;
+            }
+          }
+
+          .movie-relase {
+            font-size: vars.$text-sm;
+            font-weight: 500;
+            color: vars.$text-color;
+            margin-top: auto;
+          }
+
+          .movie-desc {
+            display: none;
+          }
+
+          @include mixins.respond("md") {
+            width: calc((100% * 4 / 12) - ((12 - 4) * 24px / 12));
+            max-width: calc((100% * 4 / 12) - ((12 - 4) * 24px / 12));
+          }
+
+          @include mixins.respond("lg") {
+            width: calc((100% * 3 / 12) - ((12 - 3) * 24px / 12));
+            max-width: calc((100% * 3 / 12) - ((12 - 3) * 24px / 12));
+          }
+        }
+      }
+    }
+  }
+}

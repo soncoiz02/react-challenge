@@ -1,16 +1,40 @@
-@use './index' as *;
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@use "./index" as *;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
   font-family: "Roboto", sans-serif;
-  background: white;
-  color: #1c1c1c;
+  background: #fff;
 }
 
 .container {
-    @include container;
+  @include container;
 }
 
-main {
-    margin-top: 80px;
+.wrapper-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 240px;
+  background: #f0f0f0;
+
+  @include respond("md") {
+    height: 340px;
+  }
+
+  &:not(.loaded) {
+    @include skeleton;
+  }
+
+  &.loaded {
+    .lazy-image {
+      opacity: 1;
+    }
+  }
+  .lazy-image {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+  }
 }

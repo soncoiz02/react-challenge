@@ -1,54 +1,44 @@
-# React + TypeScript + Vite
+# 🎬 Movies TMDB App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **Movies App** built with **ReactJS + TypeScript + SCSS**, using [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✅ Features
 
-## Expanding the ESLint configuration
+✔️ View **Now Playing** movies  
+✔️ View **Top Rated** movies  
+✔️ Tab bar to switch between categories  
+✔️ Search movies with debounce  
+✔️ View movie details  
+✔️ Watch movie **trailer videos** (via TMDB + YouTube embed)  
+✔️ View **similar movies** in movie details  
+✔️ Async poster loading with fade-in animation  
+✔️ Skeleton loading placeholders  
+✔️ Lazy load images (Intersection Observer)  
+✔️ Toggle between **List View** & **Grid View**  
+✔️ Pagination for movie lists with **more than 50 pages**  
+✔️ Simple **responsive design**  
+✔️ No CSS framework or UI library — pure SCSS only  
+✔️ Error handling for network/API failures
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## ⚙️ Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- ReactJS (Vite)
+- TypeScript
+- SCSS (`@use` & `@forward`)
+- Axios (with base instance)
+- React Router DOM
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 🚀 How to Run
+
+1️⃣ **Clone the repo**
+
+```bash
+git clone https://github.com/YOUR_USERNAME/movies-tmdb-app.git
+cd movies-tmdb-app
 ```

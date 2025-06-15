@@ -1,0 +1,137 @@
+@use "variables" as vars;
+@use "mixin" as mixins;
+
+.movie-list-wrapper {
+  display: flex;
+  width: 100%;
+
+  .item {
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+
+    &:hover {
+      box-shadow: vars.$boxShadow;
+      transform: scale(1.01);
+    }
+  }
+
+  .movie-title {
+    font-size: vars.$text-md;
+    font-weight: 600;
+    color: vars.$primary-color;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .movie-vote {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: vars.$text-sm;
+    color: vars.$secondary-color;
+
+    svg {
+      font-size: vars.$text-md;
+    }
+  }
+
+  .movie-desc {
+    display: none;
+  }
+
+  .movie-release {
+    font-size: vars.$text-sm;
+    font-weight: 500;
+    color: vars.$text-color;
+    margin-top: auto;
+  }
+
+  &.list {
+    flex-direction: column;
+    gap: 20px;
+    .item {
+      width: 100%;
+
+      .movie-item {
+        display: flex;
+        gap: 16px;
+
+        .wrapper-image {
+          width: 130px;
+          height: 180px;
+          border-radius: 10px;
+        }
+
+        .movie-info {
+          width: calc(100% - 150px);
+          padding: 8px 0;
+        }
+
+        .movie-desc {
+          margin-top: 10px;
+          font-size: vars.$text-sm;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+        }
+
+        @include mixins.respond("md") {
+          .wrapper-image {
+            width: 200px;
+            height: 250px;
+          }
+          .movie-info {
+            width: calc(100% - 250px);
+          }
+        }
+      }
+    }
+  }
+
+  &.grid {
+    flex-wrap: wrap;
+    gap: 20px 16px;
+
+    @include mixins.respond("md") {
+      gap: 30px 24px;
+    }
+
+    .item {
+      width: calc((100% * 6 / 12) - ((12 - 6) * 24px / 12));
+      max-width: calc((100% * 6 / 12) - ((12 - 6) * 24px / 12));
+
+      .movie-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #f0f0f0;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .movie-info {
+          display: flex;
+          flex-direction: column;
+          padding: 8px 12px;
+          border-radius: 10px;
+          background: #ffff;
+        }
+      }
+
+      @include mixins.respond("md") {
+        width: calc((100% * 4 / 12) - ((12 - 4) * 24px / 12));
+        max-width: calc((100% * 4 / 12) - ((12 - 4) * 24px / 12));
+      }
+
+      @include mixins.respond("lg") {
+        width: calc((100% * 3 / 12) - ((12 - 3) * 24px / 12));
+        max-width: calc((100% * 3 / 12) - ((12 - 3) * 24px / 12));
+      }
+    }
+  }
+}
