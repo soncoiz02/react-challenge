@@ -39,6 +39,6 @@ This is a **Movies App** built with **ReactJS + TypeScript + SCSS**, using [The 
 1️⃣ **Clone the repo**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/movies-tmdb-app.git
-cd movies-tmdb-app
+git clone https://github.com/soncoiz02/react-challenge.git
+cd react-challenge
 ```
