@@ -18,7 +18,7 @@ This is a **Movies App** built with **ReactJS + TypeScript + SCSS**, using [The 
 ✔️ Lazy load images (Intersection Observer)  
 ✔️ Toggle between **List View** & **Grid View**  
 ✔️ Pagination for movie lists with **more than 50 pages**  
-✔️ Simple **responsive design**  
+✔️ Enhance responsive **responsive design**  
 ✔️ No CSS framework or UI library — pure SCSS only  
 ✔️ Error handling for network/API failures
 
@@ -28,7 +28,7 @@ This is a **Movies App** built with **ReactJS + TypeScript + SCSS**, using [The 
 
 - ReactJS (Vite)
 - TypeScript
-- SCSS (`@use` & `@forward`)
+- SCSS
 - Axios (with base instance)
 - React Router DOM
 
